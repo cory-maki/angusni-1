@@ -1,21 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Angus Ni | Securities Disputes &amp; Arbitration Counsel | New York</title>
-<meta name="description" content="Angus Ni is a New York trial lawyer and co-founder of Morrow Ni LLP handling securities disputes, FINRA and international arbitration, and cross-border litigation in English and Mandarin.">
-<link rel="canonical" href="https://angusni-1.netlify.app/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Angus Ni | Securities Disputes &amp; Arbitration Counsel | New York">
-<meta property="og:description" content="Angus Ni is a New York trial lawyer and co-founder of Morrow Ni LLP handling securities disputes, FINRA and international arbitration, and cross-border litigation in English and Mandarin.">
-<meta property="og:url" content="https://angusni-1.netlify.app/">
-<meta property="og:image" content="https://angusni-1.netlify.app/images/hero.jpg">
-<meta property="og:site_name" content="Angus Ni">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="author" content="Angus Ni">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,400;7..72,500;7..72,600&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css">
+<meta name="description" content="Angus Ni is a New York trial lawyer and co-founder of Morrow Ni LLP handling securities disputes, FINRA and international arbitration, and cross-border litigation in English and Mandarin."/>
+<link rel="canonical" href="https://angusni-1.netlify.app/"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/style.css"/>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+(function(){
+  const _sb=supabase.createClient('https://aowblircaymwuymcmllh.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvd2JsaXJjYXltd3V5bWNtbGxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzMzExMjcsImV4cCI6MjA2NzkwNzEyN30.qS7jxVwu83zEYMvxNo7C_2dtVrSZ6wYIFiNtoN69UkQ');
+  const _cid=['Angus Ni',' Angus Ni'];
+  async function loadSBLinks(){
+    const[{data:soc},{data:news}]=await Promise.all([
+      _sb.from('social_media').select('*').in('client_id',_cid),
+      _sb.from('news_links').select('*').in('client_id',_cid)
+    ]);
+    const render=(ids,data)=>ids.forEach(id=>{
+      const el=document.getElementById(id);
+      if(!el||!data)return;
+      el.innerHTML='';
+      data.forEach(l=>{
+        const a=document.createElement('a');
+        a.href=l.url;a.target='_blank';a.rel='noopener noreferrer';a.title=l.name;
+        a.innerHTML='<img src="'+l.icon+'" alt="'+l.name+'" style="width:30px;height:30px;border-radius:4px"/>';
+        el.appendChild(a);
+      });
+    });
+    render(['sml-soc-home'],soc);
+    render(['sml-news-home'],news);
+  }
+  document.addEventListener('DOMContentLoaded',loadSBLinks);
+})();
+</script>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Angus Ni | Securities Disputes &amp; Arbitration Counsel | New York"/>
+<meta property="og:description" content="Angus Ni is a New York trial lawyer and co-founder of Morrow Ni LLP handling securities disputes, FINRA and international arbitration, and cross-border litigation in English and Mandarin."/>
+<meta property="og:image" content="https://angusni-1.netlify.app/images/hero.jpg"/>
+<meta property="og:url" content="https://angusni-1.netlify.app/"/>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -90,65 +115,123 @@
 </script>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="site-header"><div class="wrap">
-<a class="logo" href="/">Angus Ni<span>Esq.</span></a>
-<nav class="nav" aria-label="Main"><a href="/" aria-current="page">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav>
-</div></header>
-<main id="main">
-<section class="hero"><div class="wrap">
-<div>
-<h1>Angus Ni</h1>
-<p class="role">Securities disputes and arbitration counsel, New York</p>
-<p class="lead">Angus Ni is a New York trial lawyer and co-founder of Morrow Ni LLP who represents individuals and companies in securities disputes, FINRA and international arbitration, and cross-border commercial litigation. He works in English and Mandarin, and many of his clients are Chinese businesses and investors facing proceedings in U.S. courts and tribunals.</p>
-<div class="actions"><a class="btn primary" href="about.html">Background and practice</a><a class="btn" href="contact.html">Send an inquiry</a></div>
+
+<!-- ══ STICKY NAV ══════════════════════════════════════════════════ -->
+<nav id="main-nav">
+  <a class="nav-logo" href="/">Angus<span> Ni</span></a>
+  <ul class="nav-links">
+    <li><a class="active" href="/">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ═══════════════════════════════════════════════════════ -->
+<div class="h-hero">
+  <div class="h-inner">
+    <div class="h-photo"><img src="images/hero.jpg" alt="Angus Ni"/></div>
+    <div>
+      <h1 class="h-name">Angus Ni</h1>
+      <p class="h-role">Securities Disputes &amp; Arbitration Counsel</p>
+      <p class="h-desc">Angus Ni is a New York trial lawyer and co-founder of Morrow Ni LLP who represents individuals and companies in securities disputes, FINRA and international arbitration, and cross-border commercial litigation. He works in English and Mandarin, and many of his clients are Chinese businesses and investors facing proceedings in U.S. courts and tribunals.</p>
+      <div class="h-loc">New York, NY</div>
+    </div>
+  </div>
 </div>
-<figure><img src="images/hero.jpg" alt="Angus Ni, New York securities and arbitration lawyer, in a navy suit with arms crossed" width="1100" height="1353" fetchpriority="high"></figure>
-</div></section>
 
-<section class="record" aria-labelledby="record-h"><div class="wrap">
-<h2 id="record-h">Selected matters on the record</h2>
-<p class="sub">Documented outcomes and institutional work, by forum.</p>
-<div class="ledger-scroll"><table class="ledger">
-<thead><tr><th scope="col">Forum</th><th scope="col">Matter</th><th scope="col">Outcome</th></tr></thead>
-<tbody>
-<tr><td>FINRA arbitration</td><td>Fraud and breach of contract claims by J.P. Morgan Securities LLC against a Moni Law client</td><td class="result">More than $6.4 million claimed; fraud claims denied in full and exposure limited to $279,250 after a six-day hearing</td></tr>
-<tr><td>Federal criminal trial, pro bono</td><td>United States v. Zhu</td><td class="result">Judgment of acquittal entered on the docket</td></tr>
-<tr><td>Securities class actions</td><td>Bernstein Litowitz Berger &amp; Grossmann LLP, for pension fund and hedge fund investors</td><td class="result">Prosecuted cases against U.S.-listed corporations across industries and jurisdictions</td></tr>
-<tr><td>International arbitration</td><td>Debevoise &amp; Plimpton LLP, before ICC and ICSID tribunals</td><td class="result">Arbitrations and multi-jurisdiction corporate investigations</td></tr>
-</tbody></table></div>
-<p class="note">Prior results do not guarantee a similar outcome.</p>
-</div></section>
-
-<section class="section"><div class="wrap split">
-<div>
-<p class="label">About</p>
-<h2>Institutional training, applied to transnational disputes</h2>
-<p>Before co-founding Morrow Ni LLP, Angus Ni prosecuted securities class actions at Bernstein Litowitz Berger &amp; Grossmann LLP on behalf of pension fund and hedge fund investors. Earlier, in the litigation department of Debevoise &amp; Plimpton LLP, he worked on ICC and ICSID arbitrations and large-scale corporate investigations. He holds a J.D. with honors from the University of Chicago Law School.</p>
-<p>That training now runs in the other direction. At the firm, which practices as Moni Law, Angus represents clients on the receiving end of high-value claims, as in <a href="reg-sho-close-outs-jp-morgan.html">the J.P. Morgan FINRA arbitration</a>, where a six-day hearing ended with the claim cut from more than $6.4 million to $279,250. <a href="about.html">His professional background in full</a> covers that training, his matters and his involvement in New York’s Chinese-American legal community.</p>
+<!-- ══ ABOUT TEASER ═══════════════════════════════════════════════ -->
+<div class="h-about">
+  <div class="ha-inner">
+    <div class="ha-text">
+      <p class="eyebrow">About</p>
+      <h2 class="sec-title">Institutional training, applied to transnational disputes</h2>
+      <p>Before co-founding Morrow Ni LLP, Angus Ni prosecuted securities class actions at Bernstein Litowitz Berger &amp; Grossmann LLP on behalf of pension fund and hedge fund investors. Earlier, in the litigation department of Debevoise &amp; Plimpton LLP, he worked on ICC and ICSID arbitrations and large-scale corporate investigations. He holds a J.D. with honors from the University of Chicago Law School.</p>
+      <p>That training now runs in the other direction. At the firm, which practices as Moni Law, Angus represents clients on the receiving end of high-value claims, as in <a href="reg-sho-close-outs-jp-morgan.html">the J.P. Morgan FINRA arbitration</a>, where a six-day hearing ended with the claim cut from more than $6.4 million to $279,250.</p>
+      <p>Mr. Ni also served as pro bono trial counsel in United States v. Zhu, a federal criminal case that ended in a judgment of acquittal. <a href="about.html">His professional background in full</a> covers that training, his matters and his involvement in New York’s Chinese-American legal community. Prior results do not guarantee a similar outcome.</p>
+      <a class="ha-link" href="about.html">Learn more →</a>
+    </div>
+    <div><img class="ha-photo" src="images/hero-secondary.jpg" alt="Angus Ni"/></div>
+  </div>
 </div>
-<figure><img src="images/hero-secondary.jpg" alt="Angus Ni, co-founder of Morrow Ni LLP, standing against a white background" loading="lazy" width="1600" height="1066"><figcaption>Mr. Ni practices from New York, before federal and state courts and arbitral tribunals.</figcaption></figure>
-</div></section>
 
-<section class="section"><div class="wrap">
-<p class="label">Analysis</p>
-<h2>Securities, arbitration and the New York bar</h2>
-<div class="cards"><a class="card" href="reg-sho-close-outs-jp-morgan.html"><img src="images/article-1.jpg" alt="Angus Ni, securities litigator at Morrow Ni LLP, in a dark suit with arms crossed" loading="lazy" width="1400" height="900"><span class="cat">FINRA Arbitration</span><h3>Reg SHO Close-Outs and the J.P. Morgan FINRA Arbitration</h3><time datetime="2026-09-15">September 15, 2026</time></a><a class="card" href="securities-litigation-risk-management-listed.html"><img src="images/article-2.jpg" alt="Portrait of New York attorney Angus Ni in a navy suit and light blue tie" loading="lazy" width="1400" height="900"><span class="cat">Securities Litigation</span><h3>Securities Litigation Risk Management for Listed Chinese Companies</h3><time datetime="2026-10-13">October 13, 2026</time></a><a class="card" href="cross-border-litigation-careers-new-york.html"><img src="images/article-3.jpg" alt="Angus Ni hiking among red sandstone formations under a blue sky" loading="lazy" width="1400" height="900"><span class="cat">New York Practice</span><h3>Cross-Border Litigation Careers in New York: Notes from an AABANY Panel</h3><time datetime="2026-11-10">November 10, 2026</time></a></div>
-</div></section>
-
-<section class="section"><div class="wrap">
-<h2>Elsewhere online</h2>
-<div class="links-block">
-<details class="drawer"><summary>Follow Angus Ni on social media</summary><div class="body"><div id="socialMediaList1" class="social-media-list"></div></div></details>
-<details class="drawer"><summary>Angus Ni in the news</summary><div class="body"><div id="socialMediaList2" class="social-media-list"></div></div></details>
+<!-- ══ SOCIAL + PRESS ACCORDION ═══════════════════════════════════ -->
+<div class="acc-section" style="background:var(--off)">
+  <div class="acc-wrap">
+    <button class="acc-btn" onclick="tog(this,'s-home')">Follow Angus Ni on Social Media <span class="chevron">&#8964;</span></button>
+    <div class="acc-body" id="s-home"><div id="sml-soc-home" class="social-media-list"></div></div>
+    <button class="acc-btn" onclick="tog(this,'n-home')">Angus Ni in the Press <span class="chevron">&#8964;</span></button>
+    <div class="acc-body" id="n-home"><div id="sml-news-home" class="social-media-list"></div></div>
+  </div>
 </div>
-</div></section>
-</main>
-<footer class="site-footer"><div class="wrap">
-<p class="fine">© 2026 Angus Ni. Attorney Advertising. Prior results do not guarantee a similar outcome. This site is for general information and does not create an attorney-client relationship.</p>
-<nav aria-label="Footer"><a href="/">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="privacy.html">Privacy Policy</a></nav>
-</div></footer>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="assets/site.js"></script>
+
+<!-- ══ LATEST ARTICLES ════════════════════════════════════════════ -->
+<div class="h-press">
+  <div class="pi">
+    <p class="eyebrow">Analysis</p>
+    <h2 class="sec-title">Securities, arbitration and the New York bar</h2>
+    <div class="cards">
+      <a class="card card-article" href="reg-sho-close-outs-jp-morgan.html">
+        <div class="ct-img"><img src="images/article-1.jpg" alt="Reg SHO Close-Outs and the J.P. Morgan FINRA Arbitration"/></div>
+        <div class="cb">
+          <div class="cb-pub">FINRA Arbitration</div>
+          <div class="cb-hl">Reg SHO Close-Outs and the J.P. Morgan FINRA Arbitration</div>
+          <div class="cb-yr">September 15, 2026</div>
+        </div>
+      </a>
+      <a class="card card-article" href="securities-litigation-risk-management-listed.html">
+        <div class="ct-img"><img src="images/article-2.jpg" alt="Securities Litigation Risk Management for Listed Chinese Companies"/></div>
+        <div class="cb">
+          <div class="cb-pub">Securities Litigation</div>
+          <div class="cb-hl">Securities Litigation Risk Management for Listed Chinese Companies</div>
+          <div class="cb-yr">October 13, 2026</div>
+        </div>
+      </a>
+      <a class="card card-article" href="cross-border-litigation-careers-new-york.html">
+        <div class="ct-img"><img src="images/article-3.jpg" alt="Cross-Border Litigation Careers in New York: Notes from an AABANY Panel"/></div>
+        <div class="cb">
+          <div class="cb-pub">New York Practice</div>
+          <div class="cb-hl">Cross-Border Litigation Careers in New York: Notes from an AABANY Panel</div>
+          <div class="cb-yr">November 10, 2026</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ══ CONTACT TEASER ═════════════════════════════════════════════ -->
+<div class="h-contact">
+  <div class="hc-inner">
+    <div>
+      <p class="eyebrow">Get in Touch</p>
+      <h2 class="sec-title">Contact</h2>
+      <form class="cf" name="contact" method="POST" action="contact.html" data-netlify="true" netlify-honeypot="company">
+        <input type="hidden" name="form-name" value="contact"/>
+        <p hidden><label>Leave empty <input name="company"/></label></p>
+        <div><label for="hf-name">Your Name</label><input id="hf-name" name="name" type="text" placeholder="Your name" required/></div>
+        <div><label for="hf-email">Email</label><input id="hf-email" name="email" type="email" placeholder="email@example.com" required/></div>
+        <div><label for="hf-msg">Message</label><textarea id="hf-msg" name="message" placeholder="Your message..." required></textarea></div>
+        <button class="btn-sm" type="submit">Send Message</button>
+      </form>
+    </div>
+    <div class="hcp">
+      <h3 class="hc-title">Let's connect.</h3>
+      <p>Angus Ni and Morrow Ni LLP take inquiries from prospective clients, counsel and journalists, in English or Mandarin. Sending a message does not create an attorney-client relationship.</p>
+     
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2026 Angus Ni. All rights reserved. Attorney Advertising. Prior results do not guarantee a similar outcome. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+</footer>
+
+<script>
+function tog(btn,id){
+  const c=document.getElementById(id),open=c.classList.contains('open');
+  document.querySelectorAll('.acc-body').forEach(e=>e.classList.remove('open'));
+  document.querySelectorAll('.acc-btn').forEach(e=>e.classList.remove('open'));
+  if(!open){c.classList.add('open');btn.classList.add('open');}
+}
+</script>
 </body>
 </html>
