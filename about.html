@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>About Angus Ni | Securities Disputes &amp; Arbitration Counsel | New York</title>
+<title>About Angus Ni of Morrow Ni | Securities &amp; Arbitration Counsel | New York</title>
 <meta name="description" content="About Angus Ni, New York securities and arbitration litigator: Bernstein Litowitz and Debevoise training, the J.P. Morgan FINRA result, and a pro bono federal acquittal."/>
-<link rel="canonical" href="https://angusni-1.netlify.app/about.html"/>
+<link rel="canonical" href="https://angusni-1.netlify.app/about"/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/style.css"/>
 
@@ -15,10 +15,7 @@
   const _sb=supabase.createClient('https://aowblircaymwuymcmllh.supabase.co','eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFvd2JsaXJjYXltd3V5bWNtbGxoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzMzExMjcsImV4cCI6MjA2NzkwNzEyN30.qS7jxVwu83zEYMvxNo7C_2dtVrSZ6wYIFiNtoN69UkQ');
   const _cid=['Angus Ni',' Angus Ni'];
   async function loadSBLinks(){
-    const[{data:soc},{data:news}]=await Promise.all([
-      _sb.from('social_media').select('*').in('client_id',_cid),
-      _sb.from('news_links').select('*').in('client_id',_cid)
-    ]);
+    const{data:soc}=await _sb.from('social_media').select('*').in('client_id',_cid);
     const render=(ids,data)=>ids.forEach(id=>{
       const el=document.getElementById(id);
       if(!el||!data)return;
@@ -31,16 +28,16 @@
       });
     });
     render(['sml-soc-about'],soc);
-    render(['sml-news-about'],news);
+    if(!soc||!soc.length){const s=document.querySelector('.acc-section');if(s)s.style.display='none';}
   }
   document.addEventListener('DOMContentLoaded',loadSBLinks);
 })();
 </script>
 <meta property="og:type" content="website"/>
-<meta property="og:title" content="About Angus Ni | Securities Disputes &amp; Arbitration Counsel | New York"/>
+<meta property="og:title" content="About Angus Ni of Morrow Ni | Securities &amp; Arbitration Counsel | New York"/>
 <meta property="og:description" content="About Angus Ni, New York securities and arbitration litigator: Bernstein Litowitz and Debevoise training, the J.P. Morgan FINRA result, and a pro bono federal acquittal."/>
 <meta property="og:image" content="https://angusni-1.netlify.app/images/hero.jpg"/>
-<meta property="og:url" content="https://angusni-1.netlify.app/about.html"/>
+<meta property="og:url" content="https://angusni-1.netlify.app/about"/>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -112,7 +109,7 @@
   },
   {
    "@type": "AboutPage",
-   "url": "https://angusni-1.netlify.app/about.html",
+   "url": "https://angusni-1.netlify.app/about",
    "name": "About Angus Ni",
    "mainEntity": {
     "@id": "https://angusni-1.netlify.app/#person"
@@ -132,8 +129,8 @@
   <a class="nav-logo" href="/">Angus<span> Ni</span></a>
   <ul class="nav-links">
     <li><a href="/">Home</a></li>
-    <li><a class="active" href="about.html">About</a></li>
-    <li><a href="contact.html">Contact</a></li>
+    <li><a class="active" href="about">About</a></li>
+    <li><a href="contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -147,7 +144,7 @@
 <!-- ══ PROFILE CARD ══════════════════════════════════════════════ -->
 <div class="pc-wrap">
   <div class="pc">
-    <div class="pc-ph"><img src="images/hero.jpg" alt="Angus Ni"/></div>
+    <div class="pc-ph"><img src="images/hero.jpg" alt="Attorney Angus Ni at Morrow Ni in a navy suit and light blue tie, with round wire-rimmed glasses"/></div>
     <div>
       <div class="pc-nm">Angus Ni</div>
       <div class="pc-rl">Securities Disputes &amp; Arbitration Counsel</div>
@@ -165,13 +162,13 @@
         <p class="cey">Practice</p>
         <h2>Securities disputes and arbitration</h2>
         <p>The core of Mr. Ni’s current practice is securities litigation and arbitration: disputes between broker-dealers and their customers, claims arising from trading in public company shares, and the litigation exposure that follows a listing on a U.S. exchange. He advises listed companies on that exposure as a risk management question before a complaint is filed, and he represents clients once a claim is pending.</p>
-        <p>The most recent documented example is <a href="reg-sho-close-outs-jp-morgan.html">a FINRA arbitration brought by J.P. Morgan Securities</a>. J.P. Morgan sought more than $6.4 million on fraud and breach of contract theories arising from a client’s short sale of IPO stock. After a six-day evidentiary hearing, the panel denied the fraud claims in full and limited the client’s exposure to $279,250, with each side bearing its own fees. Angus Ni led the trial team with Serena Yang and Jing He. The firm posts results like this one on <a href="https://www.moni.law/" target="_blank" rel="noopener">the Moni Law website</a>.</p>
+        <p>The most recent documented example is <a href="angus-ni-morrow-ni-finra-arbitration">a FINRA arbitration brought by J.P. Morgan Securities</a>. J.P. Morgan sought more than $6.4 million on fraud and breach of contract theories arising from a client’s short sale of IPO stock. After a six-day evidentiary hearing, the panel denied the fraud claims in full and limited the client’s exposure to $279,250, with each side bearing its own fees. Angus Ni led the trial team with Serena Yang and Jing He. The firm posts results like this one on <a href="https://www.moni.law/" target="_blank" rel="noopener">Morrow Ni LLP’s website</a>.</p>
       </div>
 
       <div class="csec">
         <p class="cey">Training</p>
         <h2>Bernstein Litowitz and Debevoise</h2>
-        <p>At Bernstein Litowitz Berger &amp; Grossmann LLP, a shareholder rights firm that represents institutional investors, Mr. Ni prosecuted securities class actions against U.S.-listed corporations on behalf of hedge fund and pension fund clients. The cases spanned a range of industries and jurisdictions across the United States and involved both domestic and international discovery. That plaintiff-side experience is the foundation for <a href="securities-litigation-risk-management-listed.html">his analysis of securities litigation risk</a> facing listed companies today.</p>
+        <p>At Bernstein Litowitz Berger &amp; Grossmann LLP, a shareholder rights firm that represents institutional investors, Mr. Ni prosecuted securities class actions against U.S.-listed corporations on behalf of hedge fund and pension fund clients. The cases spanned a range of industries and jurisdictions across the United States and involved both domestic and international discovery. That plaintiff-side experience is the foundation for <a href="angus-ni-morrow-ni-securities-litigation-risk">his analysis of securities litigation risk</a> facing listed companies today.</p>
         <p>Earlier, as an associate in the litigation department of Debevoise &amp; Plimpton LLP, he worked on arbitrations before the International Chamber of Commerce (ICC) and the World Bank’s International Centre for Settlement of Investment Disputes (ICSID), and on large-scale corporate investigations in several jurisdictions.</p>
       </div>
 
@@ -193,7 +190,7 @@
         <p class="cey">New York</p>
         <h2>New York practice, community and education</h2>
         <p>Ni practices from New York, where the federal courts of the Southern and Eastern Districts are among the most active venues for securities and cross-border commercial disputes. He takes part in the city’s Chinese-American legal community, including the Asian American Bar Association of New York (AABANY) and the Chinese American Lawyers Forum (CALF). He holds a J.D. with honors from the University of Chicago Law School and a B.A. with High Distinction from the University of Toronto.</p>
-        <p>In September 2026 he was a featured panelist at the Legal Careers Panel &amp; Networking Event at NYU School of Law, co-hosted by AABANY, the NYU China Law Students Association and CALF. <a href="cross-border-litigation-careers-new-york.html">His notes on cross-border litigation careers</a> draw on the themes of that discussion. A short personal summary is available on <a href="https://about.me/angusni/" target="_blank" rel="noopener">his about.me page</a>.</p>
+        <p>In September 2026 he was a featured panelist at the Legal Careers Panel &amp; Networking Event at NYU School of Law, co-hosted by AABANY, the NYU China Law Students Association and CALF. <a href="cross-border-litigation-careers-new-york">His notes on cross-border litigation careers</a> draw on the themes of that discussion. A short personal summary is available on <a href="https://about.me/angusni/" target="_blank" rel="noopener">his about.me page</a>.</p>
       </div>
 
     </div>
@@ -217,13 +214,11 @@
   <div class="acc-wrap">
     <button class="acc-btn" onclick="tog(this,'s-about')">Follow Angus Ni on Social Media <span class="chevron">&#8964;</span></button>
     <div class="acc-body" id="s-about"><div id="sml-soc-about" class="social-media-list"></div></div>
-    <button class="acc-btn" onclick="tog(this,'n-about')">Angus Ni in the Press <span class="chevron">&#8964;</span></button>
-    <div class="acc-body" id="n-about"><div id="sml-news-about" class="social-media-list"></div></div>
   </div>
 </div>
 
 <footer>
-  <p>&copy; 2026 Angus Ni. All rights reserved. Attorney Advertising. Prior results do not guarantee a similar outcome. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a></p>
+  <p>&copy; 2026 Angus Ni. All rights reserved. Attorney Advertising. Prior results do not guarantee a similar outcome. &nbsp;|&nbsp; <a href="privacy">Privacy Policy</a></p>
 </footer>
 
 <script>
